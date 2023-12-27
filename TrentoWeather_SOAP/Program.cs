@@ -1,3 +1,6 @@
+using SoapCore;
+using static TrentoWeather_SOAP.Logic.ServiceLogic;
+
 namespace TrentoWeather_SOAP
 {
     public class Program
@@ -5,9 +8,15 @@ namespace TrentoWeather_SOAP
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
+            builder.Services.AddSoapCore();
+            builder.Services.AddScoped<ISoapService, SoapService>();
 
-            app.MapGet("/", () => "Hello World!");
+            var app = builder.Build();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.UseSoapEndpoint<ISoapService>("/Service.wsdl", new SoapEncoderOptions(), SoapSerializer.XmlSerializer);
+            });
 
             app.Run();
         }
