@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using Newtonsoft.Json;
+using System.ServiceModel;
 using static TrentoWeather_SOAP.Models.models;
 
 namespace TrentoWeather_SOAP.Logic
@@ -16,7 +17,21 @@ namespace TrentoWeather_SOAP.Logic
         {
             public Giorni[] GetWeather(string? day = null)
             {
-                throw new NotImplementedException();
+                string Uri = "https://www.meteotrentino.it/protcivtn-meteo/api/front/previsioneOpenDataLocalita?localita=TRENTO";
+
+                using (HttpClient client = new HttpClient())
+                {
+                    using (HttpResponseMessage response = client.GetAsync(Uri).Result)
+                    {
+                        using (HttpContent content = response.Content)
+                        {
+                            String result = content.ReadAsStringAsync().Result;
+                            Rootobject data = JsonConvert.DeserializeObject<Rootobject>(result);
+                            Giorni[] dayData = data.previsione[0].giorni;
+                            return day != null ? dayData.Where(d => d.giorno == day).ToArray() : dayData;
+                        }
+                    }
+                }
             }
         }
     }
