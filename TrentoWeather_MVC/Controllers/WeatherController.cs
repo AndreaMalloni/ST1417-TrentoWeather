@@ -10,10 +10,21 @@ namespace TrentoWeather_MVC.Controllers
         public IActionResult Index()
         {
             ISoapService soapServiceChannel = new SoapServiceClient(SoapServiceClient.EndpointConfiguration.BasicHttpBinding_ISoapService_soap);
-            var sunResponse = soapServiceChannel.GetWeatherAsync(null).Result;
 
-            
-            return View();
+            var response = soapServiceChannel.GetWeatherAsync(new GetWeatherRequest()
+            {
+                Body = new GetWeatherRequestBody()
+                {
+                }
+            }).Result;
+
+
+            WeatherIndexViewModel viewModel = new WeatherIndexViewModel()
+            {
+                listaGiorni = response.Body.GetWeatherResult.ToArray()
+            };
+
+            return View(viewModel);
         }
     }
 }
