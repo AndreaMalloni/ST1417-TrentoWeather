@@ -24,7 +24,7 @@ namespace TrentoWeather_MVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Weather}/{action=Index}/{id?}");
 
             app.Run();
         }
