@@ -7,7 +7,7 @@ namespace TrentoWeather_MVC.Controllers
     public class WeatherController : Controller
     {
 
-        public IActionResult Index()
+        public IActionResult Index(String day)
         {
             ISoapService soapServiceChannel = new SoapServiceClient(SoapServiceClient.EndpointConfiguration.BasicHttpBinding_ISoapService_soap);
 
@@ -15,6 +15,7 @@ namespace TrentoWeather_MVC.Controllers
             {
                 Body = new GetWeatherRequestBody()
                 {
+                    day = day
                 }
             }).Result;
 

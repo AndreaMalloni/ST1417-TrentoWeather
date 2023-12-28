@@ -10,6 +10,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bollettino Meteorologico</title>
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
@@ -19,6 +20,13 @@
             <h1 class="text-center">Provincia di Trento</h1>
             <h2 class="text-center">Bollettino Meteorologico</h2>
             <h3 class="text-center">Fonte dati: <a href="https://www.meteotrentino.it" target="_blank">Meteo Trentino</a></p> </h3>
+
+            <form action="/weather?day=" method="get">
+                <div class="form-group mb-3">
+                <input id="input" type="date" class="form-control" name="day">
+                    <button class="btn btn-primary" type="submit">Cerca</button>
+                </div>
+            </form>
 
             <div id="meteo-container" class="mt-4">
                 @foreach (var giorno in Model.listaGiorni)
