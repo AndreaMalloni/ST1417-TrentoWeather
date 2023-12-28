@@ -14,7 +14,7 @@ namespace TrentoWeather_MVC
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Weather/Error");
             }
             app.UseStaticFiles();
 
