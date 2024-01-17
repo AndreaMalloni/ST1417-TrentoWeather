@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "http://localhost:5172/Service.wsdl"
+      "http://trentoweather_soap:8080/Service.wsdl"
     ],
     "collectionTypes": [
       "System.Array",

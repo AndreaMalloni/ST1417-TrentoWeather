@@ -667,7 +667,7 @@ namespace ServiceReference1
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_ISoapService_soap))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:5172/Service.wsdl");
+                return new System.ServiceModel.EndpointAddress("http://trentoweather_soap:8080/Service.wsdl");
             }
             throw new System.InvalidOperationException(string.Format("L\'endpoint denominato \'{0}\' non è stato trovato.", endpointConfiguration));
         }

@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  trentoweather_mvc:
+    container_name: trentoweather
+    image: ${DOCKER_REGISTRY-}trentoweathermvc
+    build:
+      context: .
+      dockerfile: TrentoWeather_MVC/Dockerfile
+    ports:
+      - "80:80"
+
+  trentoweather_soap:
+    container_name: trentoweather_soap
+    image: ${DOCKER_REGISTRY-}trentoweathersoap
+    build:
+      context: .
+      dockerfile: TrentoWeather_SOAP/Dockerfile
+    ports:
+      - "8080:80"
