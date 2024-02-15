@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrentoWeather_SOAP", "Trent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherModels", "WeatherModels\WeatherModels.csproj", "{C3DDC8E9-E3C9-4823-A7FE-8339E96CEA5A}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{49FECA78-2ADB-4145-BE35-4729CBCA626A}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8E625CEE-1F6A-4409-BC90-94E172BBDC50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{C3DDC8E9-E3C9-4823-A7FE-8339E96CEA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3DDC8E9-E3C9-4823-A7FE-8339E96CEA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3DDC8E9-E3C9-4823-A7FE-8339E96CEA5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49FECA78-2ADB-4145-BE35-4729CBCA626A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49FECA78-2ADB-4145-BE35-4729CBCA626A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49FECA78-2ADB-4145-BE35-4729CBCA626A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49FECA78-2ADB-4145-BE35-4729CBCA626A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E625CEE-1F6A-4409-BC90-94E172BBDC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E625CEE-1F6A-4409-BC90-94E172BBDC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E625CEE-1F6A-4409-BC90-94E172BBDC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E625CEE-1F6A-4409-BC90-94E172BBDC50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

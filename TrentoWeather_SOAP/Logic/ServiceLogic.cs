@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using System.ServiceModel;
+﻿using System.ServiceModel;
+using WeatherModels;
 using static TrentoWeather_SOAP.Models.models;
 
 namespace TrentoWeather_SOAP.Logic
@@ -10,28 +10,27 @@ namespace TrentoWeather_SOAP.Logic
         public interface ISoapService
         {
             [OperationContract]
-            Giorni[] GetWeather(string? day = null);
+            Giorni[] GetWeather();
+
+            [OperationContract]
+            Giorni[] GetWeatherByDay(DateTime day);
         }
 
         public class SoapService : ISoapService
         {
-            public Giorni[] GetWeather(string? day = null)
+            public Giorni[] GetWeather()
             {
-                string Uri = "https://www.meteotrentino.it/protcivtn-meteo/api/front/previsioneOpenDataLocalita?localita=TRENTO";
+                weather_request request = new weather_request();
+                Rootobject weather = request.send();
+                return weather.previsione[0].giorni;
+            }
 
-                using (HttpClient client = new HttpClient())
-                {
-                    using (HttpResponseMessage response = client.GetAsync(Uri).Result)
-                    {
-                        using (HttpContent content = response.Content)
-                        {
-                            String result = content.ReadAsStringAsync().Result;
-                            Rootobject data = JsonConvert.DeserializeObject<Rootobject>(result);
-                            Giorni[] dayData = data.previsione[0].giorni;
-                            return day != null ? dayData.Where(d => d.giorno == day).ToArray() : dayData;
-                        }
-                    }
-                }
+            public Giorni[] GetWeatherByDay(DateTime day)
+            {
+                weather_request request = new weather_request();
+                Rootobject weather = request.send();
+                Giorni[] dayData = weather.previsione[0].giorni;
+                return dayData.Where(d => d.giorno.Contains(day.Date.ToString("yyyy-MM-dd"))).ToArray();
             }
         }
     }

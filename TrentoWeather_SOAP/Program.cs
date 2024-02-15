@@ -18,7 +18,7 @@ namespace TrentoWeather_SOAP
                 endpoints.UseSoapEndpoint<ISoapService>("/Service.wsdl", new SoapEncoderOptions(), SoapSerializer.XmlSerializer);
             });
 
-            app.Run("http://0.0.0.0:8080");
+            app.Run();
         }
     }
 }

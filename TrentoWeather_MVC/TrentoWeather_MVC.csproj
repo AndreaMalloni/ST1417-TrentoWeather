@@ -21,4 +21,8 @@
     <ProjectReference Include="..\WeatherModels\WeatherModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Connected Services\" />
+  </ItemGroup>
+
 </Project>
