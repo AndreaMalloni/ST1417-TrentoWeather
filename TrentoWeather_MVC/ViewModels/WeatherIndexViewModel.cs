@@ -1,4 +1,4 @@
-﻿using static TrentoWeather_SOAP.Models.models;
+﻿using ServiceReference1;
 
 namespace TrentoWeather_MVC.ViewModels
 {

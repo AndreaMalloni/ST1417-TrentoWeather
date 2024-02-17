@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using static TrentoWeather_SOAP.Models.models;
+using static WeatherModels.Models.models;
 
-namespace WeatherModels
+namespace WeatherModels.Request
 {
     public class weather_request
     {

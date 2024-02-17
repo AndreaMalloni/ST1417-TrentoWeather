@@ -9,6 +9,8 @@ services:
       dockerfile: TrentoWeather_MVC/Dockerfile
     ports:
       - "1111:80"
+    networks:
+      - trentoweather_network
 
   trentoweather_soap:
     container_name: trentoweather_soap
@@ -18,3 +20,8 @@ services:
       dockerfile: TrentoWeather_SOAP/Dockerfile
     ports:
       - "2222:80"
+    networks:
+      - trentoweather_network
+
+networks:
+  trentoweather_network:

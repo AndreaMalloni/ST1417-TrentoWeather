@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
-using WeatherModels;
-using static TrentoWeather_SOAP.Models.models;
+using WeatherModels.Request;
+using static WeatherModels.Models.models;
 
 namespace TrentoWeather_SOAP.Logic
 {

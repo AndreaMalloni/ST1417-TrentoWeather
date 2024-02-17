@@ -23,7 +23,8 @@
       "environmentVariables": {
         "ASPNETCORE_URLS": "http://+:80"
       },
-      "publishAllPorts": true
+      "publishAllPorts": true,
+      "httpPort": 1111
     }
   },
   "iisSettings": {

@@ -32,6 +32,11 @@
             </form>
 
             <div id="meteo-container" class="mt-4">
+            @if (Model.listaGiorni.Length == 0)
+            {
+                <h3>Non sono disponibili previsioni metereologiche, probabilmente il servizio non è raggiungibileè spento</h3>
+            } else
+            {
                 @foreach (var giorno in Model.listaGiorni)
                 {
                     <div class="card mb-4">
@@ -47,7 +52,7 @@
                                 @foreach (var fascia in giorno.fasce)
                                 {
                                     <div class="col mb-4">
-                                    <div class="card h-100">
+                                        <div class="card h-100">
                                             <div class="card-header">
                                                 <h5 class="card-title">@fascia.fasciaPer (ore @fascia.fasciaOre)</h5>
                                             </div>
@@ -62,6 +67,7 @@
                         </div>
                     </div>
                 }
+            }
             </div>
         </div>
     </body>

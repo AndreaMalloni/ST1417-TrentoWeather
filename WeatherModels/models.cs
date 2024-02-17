@@ -1,4 +1,4 @@
-﻿namespace TrentoWeather_SOAP.Models
+﻿namespace WeatherModels.Models
 {
     public class models
     {
